@@ -69,7 +69,7 @@ center p {
     text-decoration-color: blueviolet;
     text-decoration-style: wavy;
 }
-@media  screen and (aspect-ratio: 16/9) {
+@media  screen and (max-width:298px) {
     .Main p {
         font-size:30px;
         color:chartreuse;
