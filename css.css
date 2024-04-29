@@ -103,9 +103,107 @@ center p {
 }
 
 @media screen and (max-width:298px) {
+    .row1,
+    .row2,
+    .row3 {
+        display: flex;
+        gap: 10px;
+    }
+    
+    body {
+        background-color: #B2533E;
+    }
+    
+    .boxes {
+        height: 11vw;
+        width: 11vw;
+        border: 1px solid black;
+        border-radius: 15px;
+        background-color: #26bead;
+        font-size: 8vw;
+        font-weight: 500;
+        box-shadow: 1px 1px 4px 1px #26bead;
+        color: #e46d0d;
+    }
+    
+    .hide {
+        display: none;
+    }
+    
+    .hide2 {
+        display: none;
+    }
+    
+    .container {
+        display: flex;
+        row-gap: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .reset {
+        margin-bottom: 20px;
+        width: 60px;
+        height: 30px;
+        border-radius: 15px;
+        border: 3px dashed rgb(6, 248, 135);
+        font-weight: 600;
+        background-color: burlywood;
+        font-size: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    
+    .Main ,.Main2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-direction: column;
+    }
+    
+    .Main button {
+        margin-bottom: 20px;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        border: 3px outset rgb(9, 114, 235);
+        font-weight: 600;
+        background-color: burlywood;
+        font-size: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .Main2 button {
+        margin-bottom: 20px;
+        width: 100px;
+        height: 30px;
+        border-radius: 5px;
+        border: 3px outset rgb(9, 114, 235);
+        font-weight: 600;
+        background-color: burlywood;
+        font-size: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
     .Main p {
-        font-size: 10vw;
+        font-size: 60px;
         color: chartreuse;
         transition: cubic-bezier(0, 1.81, 1, 1.6);
+    }
+    
+    .Main2 p {
+        font-size: 60px;
+        color: chartreuse;
+        transition: cubic-bezier(0, 1.81, 1, 1.6);
+    
+    }
+    
+    center p {
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        color: rgb(255, 251, 0);
+        text-shadow: 2px 2px 4px rgba(185, 7, 7, 0.3);
+        text-decoration-color: blueviolet;
+        text-decoration-style: wavy;
     }
 }
