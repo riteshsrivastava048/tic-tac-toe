@@ -7,8 +7,15 @@
 
 body {
     background-color: #B2533E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:14vw;
 }
 
+table{
+    height: 10vw;
+}
 .boxes {
     height: 11vw;
     width: 11vw;
@@ -80,13 +87,13 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .Main p {
-    font-size: 9vw;
+    font-size: 6vw;
     color: chartreuse;
     transition: cubic-bezier(0, 1.81, 1, 1.6);
 }
 
 .Main2 p {
-    font-size: 60px;
+    font-size: 6vw;
     color: chartreuse;
     transition: cubic-bezier(0, 1.81, 1, 1.6);
 
@@ -196,4 +203,49 @@ center p {
         text-decoration-color: blueviolet;
         text-decoration-style: wavy;
     }
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 21vw;
+    margin: auto;
+    background-color: burlywood;
+}
+
+th, td {
+    border: 1px solid burlywood;
+    padding: 8px;
+}
+
+th {
+    background-color: #978e0e;
+    font-size: 1.7vw;
+    font-weight: 600;
+}
+
+td {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+.scoreheading{
+    height: 4vw;
+    width: 21vw;
+    background-color: #940909;
+    font-size:1.7vw;
+    padding: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.scoreheading h1{
+    padding: auto;
+}
+.sO,.sX{
+    font-weight: 800;
+    font-size: xx-large;
 }

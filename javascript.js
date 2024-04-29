@@ -5,6 +5,8 @@ let msg = document.querySelector(".msg");
 let newbtn = document.querySelector(".newbtn");
 let newbtn2 = document.querySelector(".newbtn2");
 let hide2 = document.querySelector(".hide2");
+let sO = document.querySelector(".sO");
+let sX = document.querySelector(".sX");
 let turno = true ;
 let winpattern = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 let count = 0 ;
@@ -24,8 +26,7 @@ boxes.forEach((box) => {
     })
 })
 
-
-
+let winnerone ;
 const checkwinner = () => {
     for(pattern of winpattern){
      let post1 = boxes[pattern[0]].innerText;
@@ -37,11 +38,14 @@ const checkwinner = () => {
             console.log("Winner");
             showWinner(post1);
             disablebtn();
+            winnerone = post1 ;
+            countwinner(winnerone);
         }
      }
      boxes.disabled = true ;
     } 
 }
+
 boxes.forEach((box) => {
     box.addEventListener("click",() => {
         count++;
@@ -77,4 +81,29 @@ const enablebtn = () => {
 newbtn.addEventListener("click",greset);
 newbtn2.addEventListener("click",greset);
 reset.addEventListener("click",greset);
+
+
+let scoreO = 0 ;
+let scoreX = 0 ;
+const countwinner = (winnerone) => {
+    if(winnerone == "O"){
+        scoreO++;
+        scorecalcO(scoreO);
+        console.log("Score of O ",scoreO);
+    }
+    else{
+        scoreX++;
+        scorecalcX(scoreX);
+        console.log("Score of X",scoreX);
+    }
+}
+const scorecalcO = (score) => {
+     sO.innerText = score ;
+}
+const scorecalcX = (score) => {
+    sX.innerText = score ;
+}
+
+
+
 
