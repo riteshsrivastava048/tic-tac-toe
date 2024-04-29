@@ -78,7 +78,3 @@ newbtn.addEventListener("click",greset);
 newbtn2.addEventListener("click",greset);
 reset.addEventListener("click",greset);
 
-if(count == 9){
-    console.log("Draw");
-}
-console.log(count);
