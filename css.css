@@ -80,7 +80,7 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .Main p {
-    font-size: 60px;
+    font-size: 9vw;
     color: chartreuse;
     transition: cubic-bezier(0, 1.81, 1, 1.6);
 }
@@ -184,18 +184,8 @@ center p {
         font-size: 10px;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    .Main p {
-        font-size: 30px;
-        color: chartreuse;
-        transition: cubic-bezier(0, 1.81, 1, 1.6);
-    }
-    
-    .Main2 p {
-        font-size: 30px;
-        color: chartreuse;
-        transition: cubic-bezier(0, 1.81, 1, 1.6);
-    
-    }
+
+
     
     center p {
         font-size: 15px;
