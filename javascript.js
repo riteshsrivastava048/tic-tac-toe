@@ -49,10 +49,12 @@ const checkwinner = () => {
 boxes.forEach((box) => {
     box.addEventListener("click",() => {
         count++;
-        if(count == 9){
+        if(count % 9 == 0){
             hide2.classList.remove("hide2");
         }
+        console.log(count);
         });
+        console.log("hey",count);
 });
 const showWinner = (winner) => {
   msg.innerText = `Congrats,Winner is ${winner}` ;
@@ -64,6 +66,7 @@ const greset = () => {
     enablebtn();
     hide.classList.add("hide");
     hide2.classList.add("hide2");
+    count = 0 ;
 
 }
 const disablebtn = () => {
@@ -103,7 +106,9 @@ const scorecalcO = (score) => {
 const scorecalcX = (score) => {
     sX.innerText = score ;
 }
-
+const zero = (count) => {
+      count = 0 ;
+}
 
 
 

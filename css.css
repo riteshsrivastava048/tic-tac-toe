@@ -110,6 +110,14 @@ center p {
 }
 
 @media screen and (max-width:298px) {
+    body {
+        background-color: #B2533E;
+        display: flex;
+        flex-direction : column ; 
+        justify-content: center;
+        align-items: center;
+        gap:14vw;
+    }
     .row1,
     .row2,
     .row3 {
@@ -217,7 +225,6 @@ table {
 }
 
 th, td {
-    border: 1px solid burlywood;
     padding: 8px;
 }
 
@@ -248,4 +255,7 @@ h1 {
 .sO,.sX{
     font-weight: 800;
     font-size: xx-large;
+}
+.sO , .sO1{
+    border-right: 1px solid rgb(14, 13, 13);
 }
