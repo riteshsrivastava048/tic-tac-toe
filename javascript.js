@@ -1,114 +1,124 @@
-let boxes = document.querySelectorAll(".boxes");
-let reset = document.querySelector(".reset");
-let hide = document.querySelector(".hide");
-let msg = document.querySelector(".msg");
-let newbtn = document.querySelector(".newbtn");
-let newbtn2 = document.querySelector(".newbtn2");
-let hide2 = document.querySelector(".hide2");
-let sO = document.querySelector(".sO");
-let sX = document.querySelector(".sX");
-let turno = true ;
-let winpattern = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-let count = 0 ;
+const boxes = document.querySelectorAll(".boxes");
+const reset = document.querySelector(".reset");
+const hide = document.querySelector(".hide");
+const msg = document.querySelector(".msg");
+const newbtn = document.querySelector(".newbtn");
+const newbtn2 = document.querySelector(".newbtn2");
+const hide2 = document.querySelector(".hide2");
+const sO = document.querySelector(".sO");
+const sX = document.querySelector(".sX");
+const finalresult = document.querySelector(".finalresult");
+const finalbutton = document.querySelector(".finalbutton");
+const hide3 = document.querySelector(".hide3");
+console.log(hide3);
+let turno = true;
+const winPatterns = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+    [0, 4, 8], [2, 4, 6]              // Diagonals
+];
+let count = 0;
+
 boxes.forEach((box) => {
-    box.addEventListener("click",() => {
-        if(turno){
-        box.innerText="O";
-        turno = false;
-        }
-        else{
-            box.innerText="X";
-        turno = true ;
+    box.addEventListener("click", () => {
+        if (turno) {
+            box.innerText = "O";
+            turno = false;
+        } else {
+            box.innerText = "X";
+            turno = true;
         }
         box.disabled = true;
-
-        checkwinner();
-    })
-})
-
-let winnerone ;
-const checkwinner = () => {
-    for(pattern of winpattern){
-     let post1 = boxes[pattern[0]].innerText;
-     let post2 = boxes[pattern[1]].innerText;
-     let post3 = boxes[pattern[2]].innerText;
-
-     if(post1 != "" && post2 != "" && post3 != ""){
-        if(post1 == post2 && post2 == post3){
-            console.log("Winner");
-            showWinner(post1);
-            disablebtn();
-            winnerone = post1 ;
-            countwinner(winnerone);
-        }
-     }
-     boxes.disabled = true ;
-    } 
-}
-
-boxes.forEach((box) => {
-    box.addEventListener("click",() => {
         count++;
-        if(count % 9 == 0){
-            hide2.classList.remove("hide2");
-        }
-        console.log(count);
-        });
-        console.log("hey",count);
+        checkWinner();
+    });
 });
+
+const checkWinner = () => {
+    let winnerFound = false;
+
+    for (const pattern of winPatterns) {
+        const [pos1, pos2, pos3] = pattern;
+        const post1 = boxes[pos1].innerText;
+        const post2 = boxes[pos2].innerText;
+        const post3 = boxes[pos3].innerText;
+
+        if (post1 && post1 === post2 && post2 === post3) {
+            showWinner(post1);
+            disableBoxes();
+            countWinner(post1);
+            winnerFound = true;
+            break;
+        }
+    }
+
+    if (!winnerFound && count === 9) {
+        showDraw();
+        disableBoxes();
+    }
+};
+
 const showWinner = (winner) => {
-  msg.innerText = `Congrats,Winner is ${winner}` ;
-  hide.classList.remove("hide");
-}
+    msg.innerText = `Congratulations! Winner is ${winner}`;
+    hide.classList.remove("hide");
+};
+
+const showDraw = () => {
+    msg.innerText = "It's a Draw!";
+    hide2.classList.remove("hide2");
+    
+};
+
+const disableBoxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = true;
+    });
+};
+
+const enableBoxes = () => {
+    boxes.forEach((box) => {
+        box.disabled = false;
+        box.innerText = "";
+    });
+};
 
 const greset = () => {
-    turno = true ;
-    enablebtn();
+    turno = true;
+    enableBoxes();
     hide.classList.add("hide");
     hide2.classList.add("hide2");
-    count = 0 ;
+    hide3.classList.add("hide3");
+    count = 0;
+};
 
-}
-const disablebtn = () => {
-    for(let box of boxes){
-        box.disabled = true ;
-    }
-}
-const enablebtn = () => {
-    for(let box of boxes){
-        box.disabled = false ;
-        box.innerText="";
-    }
-}
+newbtn.addEventListener("click", greset);
+newbtn2.addEventListener("click", greset);
+reset.addEventListener("click", greset);
 
-newbtn.addEventListener("click",greset);
-newbtn2.addEventListener("click",greset);
-reset.addEventListener("click",greset);
+let scoreO = 0;
+let scoreX = 0;
 
-
-let scoreO = 0 ;
-let scoreX = 0 ;
-const countwinner = (winnerone) => {
-    if(winnerone == "O"){
+const countWinner = (winner) => {
+    if (winner === "O") {
         scoreO++;
-        scorecalcO(scoreO);
-        console.log("Score of O ",scoreO);
-    }
-    else{
+        sO.innerText = scoreO;
+    } else {
         scoreX++;
-        scorecalcX(scoreX);
-        console.log("Score of X",scoreX);
+        sX.innerText = scoreX;
     }
-}
-const scorecalcO = (score) => {
-     sO.innerText = score ;
-}
-const scorecalcX = (score) => {
-    sX.innerText = score ;
-}
-const zero = (count) => {
-      count = 0 ;
-}
+    if(scoreO > scoreX){
+        finalresult.innerText="Winner is O" ;
+    }
+    if(scoreX > scoreO){
+        finalresult.innerText="Winner is X" ;
+    }
+    if(scoreX == scoreO){
+        finalresult.innerText="Draw";
+    }
+};
 
-
+finalbutton.addEventListener("click",() => {
+    hide3.classList.remove("hide3");
+    console.log("Hello");
+})
 
