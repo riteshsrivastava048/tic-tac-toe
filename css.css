@@ -190,24 +190,21 @@ h1 {
     border-radius: 15px;
     border: 3px solid goldenrod;
     font-weight: 600;
-    font-size: 1.3vw;
+    font-size: 2vw;
+    width:12rem;
+    height: 3.8rem;
+
 }
-.final button.clicked {
-    height:fit-content;
-    width:fit-content;
-    padding:1vw;
-    border-radius: 15px;
-    border: 3px solid goldenrod;
-    font-weight: 600;
-    font-size: 1.3vw;
-}
+
 .final button:hover{
     cursor: pointer;
     scale: 1.05;
     text-decoration: underline;
     transition: 0.3s all ease-in-out;
     font-size:1.35vw;
+    font-size: 1.8vw;
 }
+
 .finalresult{
     height:5vw;
     width:20vw;
