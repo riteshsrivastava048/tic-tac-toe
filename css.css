@@ -65,7 +65,10 @@ table{
     font-size: 1.6vw;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+.reset:hover{
+    cursor:pointer;
+    opacity: 0.8;
+}
 .Main ,.Main2{
     display: flex;
     justify-content: center;
@@ -76,36 +79,46 @@ table{
 
 .Main button {
     margin-bottom: 20px;
-    width: 130px;
-    height: 40px;
+    width: 13vw;
+    height: 3.5vw;
     border-radius: 5px;
     border: 3px outset rgb(9, 114, 235);
     font-weight: 600;
     background-color: burlywood;
-    font-size: 17px;
+    font-size: 1.8vw;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.Main button:hover{
+   cursor: pointer;
+   opacity:0.8;
+}
+.Main2 button:hover{
+    cursor: pointer;
+    opacity:0.8;
 }
 .Main2 button {
     margin-bottom: 20px;
-    width: 130px;
-    height: 40px;
+    width: 13vw;
+    height: 3.5vw;
     border-radius: 5px;
     border: 3px outset rgb(9, 114, 235);
     font-weight: 600;
     background-color: burlywood;
-    font-size: 17px;
+    font-size: 1.8vw;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .Main p {
-    font-size: 6vw;
+    font-size: 3vw;
     color: chartreuse;
     transition: cubic-bezier(0, 1.81, 1, 1.6);
+    text-shadow: 2px 2px 5px chartreuse;
 }
 
 .Main2 p {
-    font-size: 6vw;
+    font-size: 3vw;
     color: chartreuse;
     transition: cubic-bezier(0, 1.81, 1, 1.6);
+    text-shadow: 2px 2px 5px chartreuse;
 
 }
 
@@ -198,11 +211,12 @@ h1 {
 
 .final button:hover{
     cursor: pointer;
-    scale: 1.05;
+    scale: 1.03;
     text-decoration: underline;
     transition: 0.3s all ease-in-out;
     font-size:1.35vw;
     font-size: 1.8vw;
+    opacity: 0.8;
 }
 
 .finalresult{
