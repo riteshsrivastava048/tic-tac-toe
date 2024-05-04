@@ -56,13 +56,13 @@ table{
 
 .reset {
     margin-bottom: 20px;
-    width: 6rem;
-    height: 2.5rem;
+    width: 8vw;
+    height: 3.5vw;
     border-radius: 15px;
     border: 3px dashed rgb(6, 248, 135);
     font-weight: 600;
     background-color: burlywood;
-    font-size: 1.6rem;
+    font-size: 1.6vw;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -183,16 +183,16 @@ h1 {
     width: 5vw;
     background-color:yellow;
 }
-.final button{
+.finalbutton{
     height:fit-content;
     width:fit-content;
-    padding:1vw;
+    /* padding:1vw; */
     border-radius: 15px;
     border: 3px solid goldenrod;
     font-weight: 600;
     font-size: 2vw;
-    width:12rem;
-    height: 3.8rem;
+    width:14vw;
+    height: 4.8vw;
 
 }
 
